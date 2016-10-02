@@ -1,0 +1,12 @@
+#pragma once
+
+enum BoardPins
+{
+	VCC_PIN = A2,
+	GND_PIN = 9,
+	ENCODER_IRQ_PIN = 3, // SCL
+	ENCODER_DIRECTION_PIN = 2, // SDA
+	MOTOR_PWM_PIN = 10,
+	MOTOR_DIR_A_PIN = A0,
+	MOTOR_DIR_B_PIN = A1
+};

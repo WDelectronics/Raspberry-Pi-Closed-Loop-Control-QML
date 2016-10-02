@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>WheelControl.qml</file>
+        <file>WheelControlForm.ui.qml</file>
+        <file>Settings.qml</file>
+        <file>SettingsForm.ui.qml</file>
+    </qresource>
+</RCC>
