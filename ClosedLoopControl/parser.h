@@ -6,24 +6,24 @@
 
 class Parser : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   explicit Parser(QObject *parent = 0);
+    explicit Parser(QObject *parent = 0);
 
 signals:
-   void newData(int value);
-   void connected(bool value);
+    void newData(int value);
+    void connected(bool value);
 
 public slots:
-   void transmittData(int value);
-   void connectToPort(QString port, QString baud);
-   void disconnectFromPort();
+    void transmittData(int value);
+    void connectToPort(QString port, QString baud);
+    void disconnectFromPort();
 
 private slots:
-   void readData();
+    void readData();
 
 private:
-   QSerialPort *serial;
+    QSerialPort *serial;
 };
 
 #endif // PARSER_H

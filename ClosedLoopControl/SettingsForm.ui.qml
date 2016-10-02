@@ -19,8 +19,6 @@ Flickable{
     property alias buttonConnect: buttonConnect
     property alias comboBoxBaud: comboBoxBaud
     property alias comboBoxPort: comboBoxPort
-    property alias spinBoxMaxPwr: spinBoxMaxPwr
-    property alias buttonMaxApply: buttonMaxApply
     property alias buttonSavePid: buttonSavePid
 
     Pane {
@@ -28,22 +26,15 @@ Flickable{
         anchors.fill: parent
         width: 800
         height: 480
+
         GridLayout {
-            rowSpacing: 2
-            columnSpacing: 2
-            anchors.top: parent.top
-            anchors.topMargin: 0
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 43
-            anchors.left: parent.left
-            anchors.leftMargin: 2
-            anchors.right: parent.right
-            anchors.rightMargin: 2
+            anchors.fill: parent
             rows: 2
             columns: 2
 
             GroupBox {
                 id: groupBoxArduinoCom
+                spacing: 1
                 Layout.columnSpan: 1
                 Layout.rowSpan: 1
                 bottomPadding: 8
@@ -60,7 +51,7 @@ Flickable{
                     anchors.leftMargin: 0
                     anchors.topMargin: 0
                     columnSpacing: 2
-                    rowSpacing: 2
+                    rowSpacing: 0
                     anchors.fill: parent
                     rows: 6
                     columns: 6
@@ -154,7 +145,7 @@ Flickable{
                 id: groupBoxPid
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-                Layout.preferredHeight: 250
+                Layout.preferredHeight: 238
                 Layout.preferredWidth: 322
                 title: qsTr("Motor PID")
 
@@ -256,62 +247,12 @@ Flickable{
             }
 
             GroupBox {
-                id: groupBoxMotorLimit
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                Layout.preferredHeight: 170
-                Layout.preferredWidth: 331
-                title: qsTr("Motor Limit")
-
-                GridLayout {
-                    anchors.fill: parent
-                    rows: 2
-                    columns: 2
-
-                    Label {
-                        id: label6
-                        text: qsTr("Max Power (%):")
-                        verticalAlignment: Text.AlignVCenter
-                        Layout.preferredHeight: 24
-                        Layout.preferredWidth: 84
-                    }
-
-                    SpinBox {
-                        id: spinBoxMaxPwr
-                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                        stepSize: 10
-                        from: 1
-                        to: 100
-                        value: 10
-                        Layout.fillHeight: false
-                        Layout.fillWidth: false
-                        Layout.preferredHeight: 40
-                        Layout.preferredWidth: 160
-                    }
-
-                    Item {
-                        id: spacer6
-                        Layout.preferredHeight: 14
-                        Layout.preferredWidth: 14
-                    }
-
-                    Button {
-                        id: buttonMaxApply
-                        text: qsTr("Apply")
-                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                        Layout.fillWidth: false
-                        Layout.preferredHeight: 50
-                        Layout.preferredWidth: 161
-                    }
-                }
-            }
-
-            GroupBox {
                 id: groupBoxSystem
+                Layout.columnSpan: 2
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-                Layout.preferredHeight: 200
-                Layout.preferredWidth: 322
+                Layout.preferredHeight: 168
+                Layout.preferredWidth: 601
                 title: qsTr("System ")
 
                 DelayButton {
